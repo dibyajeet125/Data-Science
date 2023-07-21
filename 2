@@ -1,0 +1,49 @@
+import tabula
+import pandas as pd
+
+def function():
+    
+#read a PDF File
+    df = tabula.read_pdf("ASSN2 - Rainfall in WestBengal.pdf", pages=1)[0]
+    
+#convert PDF into CSV
+    df.to_csv("2.csv")
+    
+#read a CSV File
+    df = pd.read_csv("2.csv")
+
+#remove first row (after col. name)
+    df = df.iloc[1:]
+    
+#remove column (here Sl.No. & District)
+    df.drop(df.iloc[:, 1:3], inplace = True, axis = 1)
+    
+#name or rename columns
+    df.columns = ['Sl','Monsoon','NonMonsoon','Total']
+    
+#print all rows & columns(excluding above removed ones)
+    print(df.head(20))
+
+#convert string to float
+    df['Sl'] = pd.to_numeric(df['Sl'])
+    df['Monsoon'] = pd.to_numeric(df['Monsoon'])
+    df['NonMonsoon'] = pd.to_numeric(df['NonMonsoon'])
+    df['Total'] = pd.to_numeric(df['Total'])
+
+#filter rows
+#print mean & standard deviation
+    '''print("MEAN of Monsoon: ", df['Monsoon'][(df.Sl <= 20)].mean())    
+    print("Std. Dev. of Monsoon: ", df['Monsoon'][(df.Sl <= 20)].std())
+    print("MEAN of Non-Monsoon: ", df['NonMonsoon'][(df.Monsoon <= 1260)].mean())    
+    print("Std. Dev. of Non-Monsoon: ", df['NonMonsoon'][(df.Monsoon <= 1260)].std())
+    print("MEAN of Total: ", df['Total'][(df.NonMonsoon <= 410)].mean())    
+    print("Std. Dev. of Total: ", df['Total'][(df.NonMonsoon <= 410)].std())
+    '''
+    print("-----------|-----------------------|-----------------------|----------------------")
+    print("Mean/Std   |    Monsoon            |      Non-Monsoon      |     Total            ")
+    print("-----------|-----------------------|-----------------------|----------------------")
+    print("Mean       |   ",df['Monsoon'][(df.Sl <= 20)].mean(),"|",df['NonMonsoon'][(df.Sl <= 20)].mean(),"    |   ",df['Total'][(df.Sl <= 20)].mean())
+    print("Std. Dev.  |   ",df['Monsoon'][(df.Sl <= 20)].std()," |",df['NonMonsoon'][(df.Sl <= 20)].std(),"    |   ",df['Total'][(df.Sl <= 20)].std())    
+    print("-----------|-----------------------|-----------------------|----------------------")
+    
+function()
