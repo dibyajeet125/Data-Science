@@ -1,0 +1,21 @@
+import pandas as pd
+
+#read a Text File
+df = pd.read_fwf("Data5.txt")
+print(df)
+print()
+
+#rename the columns, this will give different index names
+df.rename(columns = {'Very Dense Mangrove':'VeryDenseMangrove', 'Moderately Dense Mangrove':'ModeratelyDenseMangrove', 'Open Mangrove':'OpenMangrove'}, inplace = True)
+print(df.columns)
+print()
+
+#split the particular col. "State/UT and District" into two
+df[['State/UT', 'District']]=df['State/UT and District'].str.split('-', expand=True)
+print(df)
+print()
+
+#group state-wise sum of different mangrove covers
+#with specific index name
+mangrove=df[['State/UT', 'Very', 'Moderately', 'OpenMangrove']].groupby('State/UT').sum().sort_values(by='State/UT')
+print(mangrove)
