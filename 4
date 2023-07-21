@@ -1,0 +1,84 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+#read a Text File, create a header name starting with 0,1...
+#which will replace by names
+df = pd.read_fwf("Data4.txt", header=None, names=["x", "y"])
+
+#copy x & y column to excel
+df[['x','y']].to_excel('4.xlsx')
+
+print(df)
+print()
+
+#define x & y
+x = df.iloc[:, 0]
+y = df.iloc[:, 1]
+
+#print(x)
+#print(y)
+
+#before plotting the regression line
+plt.scatter(x, y)
+
+#put the labels
+plt.xlabel('x')
+plt.ylabel('y')
+
+#show plot
+plt.show()
+
+#number of columns
+n = np.size(x)
+
+#mean of x and y
+x_mean = np.mean(x)
+y_mean = np.mean(y)
+
+#calculate cross-deviation and deviation about x
+S_xy = np.sum(x*y) - n*x_mean*y_mean
+S_xx = np.sum(x*x) - n*x_mean*x_mean
+
+#calculate linear regression coefficients
+slope_b = S_xy / S_xx
+intercept_a = y_mean - slope_b*x_mean
+
+#plot the points at scatter plot
+plt.scatter(x, y)
+
+#predicted y
+y_pred = intercept_a + slope_b*x
+
+#plot the regression line
+plt.plot(x, y_pred, color = "black")
+
+#put the labels
+plt.xlabel('x')
+plt.ylabel('y')
+
+#show plot
+plt.show()
+
+#estimate coefficients
+print("|---|---------------------|")
+print("| a | {} |".format(intercept_a))
+print("|---|---------------------|")
+print("| b | {}  |".format(slope_b))
+print("|---|---------------------|")
+print()
+#y = a + bx
+print("Equation of linear regression is: \n|----------------------------------------------------| \
+    \n| y_pred = {} + {}x | \
+    \n|----------------------------------------------------|".format(intercept_a, slope_b))
+
+#defining the regression line
+plot_regression_line=0
+
+print()
+
+#increase tonnes rates\year = (current-previous)/previous
+df['increase_peryear_y'] = df[['y']].pct_change()
+print("Use of fertilizers is increased(or decreased) by following rates\year tonnes:")
+#print all 3 columns(incl. prev. 2) in the Dataframe
+print(df[['x', 'y', 'increase_peryear_y']])
