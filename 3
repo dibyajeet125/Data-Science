@@ -1,0 +1,43 @@
+import pandas as pd
+
+def function():
+
+#read a CSV File
+    f = pd.read_csv("Data3.csv")
+    
+#remove first col.(Category)
+    f = f.iloc[: , 1:]
+    
+#after removing Category col. from the new table,
+#remove 2nd & 3rd col.((2014-15) & (2015-16))
+    f.drop(f.iloc[:, 1:3], inplace = True, axis = 1)
+
+#print all rows & columns(excluding above removed ones)
+    print(f.head(12))
+
+#convert string to float
+    f['2016-17'] = pd.to_numeric(f['2016-17'])
+    f['2017-18'] = pd.to_numeric(f['2017-18'])
+    f['2018-19'] = pd.to_numeric(f['2018-19'])
+    f['2019-20'] = pd.to_numeric(f['2019-20'])
+    f['2020-21'] = pd.to_numeric(f['2020-21'])
+
+    print()
+
+#print mean
+    f['Average'] = f[['2016-17','2017-18','2018-19','2019-20','2020-21']].mean(axis=1)
+    print(f[['State/Region','Average']])
+    
+#"to_excel"~have to install openpyxl module
+#copy State/Region & Average table to excel
+    f[['State/Region','Average']].to_excel('3.xlsx')
+
+    print()
+
+#print total no. of states & their names having avg. >= 1000
+    x = f[f['Average'] >= 1000]
+    y = x.shape
+    print(y,'number of states produced more than 1000 units of natural gas in the last five years.These states are: ')
+    print(x)
+    
+function()
