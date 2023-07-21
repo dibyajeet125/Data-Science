@@ -1,0 +1,26 @@
+import pandas as pd
+
+def function():
+
+    f = pd.read_csv("Data1.csv")
+
+#remove first row
+    f = f.iloc[1:]
+
+#print all rows(excluding first)
+    print(f.head(108))
+
+#convert string to float
+    f['HGHT'] = pd.to_numeric(f['HGHT'])
+    f['TEMP'] = pd.to_numeric(f['TEMP'])
+
+#filter rows
+#for loop
+#print mean from 1km to 35km
+    for n in range(0,35):
+        print(f[(f.HGHT > n*(1000)) & (f.HGHT <= (n+1)*(1000))])
+        print("MEAN Temperature of",n+1,"km: ", f['TEMP'][(f.HGHT > n*(1000)) & (f.HGHT <= (n+1)*(1000))].mean())
+
+    print("35025 metres mean is excluded because its above 35 km(in ques. asked upto 35 km)")  
+
+function()
