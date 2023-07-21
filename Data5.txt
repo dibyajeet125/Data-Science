@@ -1,0 +1,50 @@
+State/UT and District                   Very Dense Mangrove     Moderately Dense Mangrove     Open Mangrove     Total
+Andhra Pradesh - East Godavari          0                       63                            125.00            188.00
+Andhra Pradesh - Guntur                 0                       28                            21.00             49.00
+Andhra Pradesh - Krishna                0                       35                            74.00             109.00
+Andhra Pradesh - Nellore                0                       0                             5.00              5.00
+Andhra Pradesh - Prakasham              0                       0                             1.00              1.00
+Goa - North Goa                         0                       16                            1.00              17.00
+Goa - South Goa                         0                       4                             1.00              5.00
+Gujarat - Ahmedabad                     0                       1                             29.00             30.00
+Gujarat - Amreli                        0                       0                             1.00              1.00
+Gujarat - Anand                         0                       0                             0.00              0.00
+Gujarat - Bharuch                       0                       21                            22.0              43.00
+Gujarat - Bhavnagar                     0                       6                             13.00             19.00
+Gujarat - Jamnagar                      0                       28                            131.00            159.00
+Gujarat - Junagarh                      0                       0                             1.00              1.00
+Gujarat - Kuchchh                       0                       118                           660.00            778.00
+Gujarat - Navsari                       0                       0                             1.00              1.00
+Gujarat - Porbandar                     0                       0                             0.00              0.00
+Gujarat - Rajkot                        0                       1                             1.00              2.00
+Gujarat - Surat                         0                       7                             13.00             20.00
+Gujarat - Vadodara                      0                       0                             2.00              2.00
+Gujarat - Valsad                        0                       0                             2.00              2.00
+Karnataka - Uttar Kannada               0                       1                             0.00              1.00
+Karnataka - Udipi                       0                       2                             0.00              2.00
+Karnataka - Total                       0                       3                             0.00              3.00
+Kerala - Kannur                         0                       3                             2.00              5.00
+Kerala - Kasaragod                      0                       0                             1.00              1.00
+Maharashtra - Mumbai city               0                       0                             2.00              2.00
+Maharashtra - Mumbai Suburb             0                       23                            20.00             43.00
+Maharashtra - Raigarh                   0                       10                            52.00             62.00
+Maharashtra - Ratnagiri                 0                       12                            11.00             23.00
+Maharashtra - Sindhudurg                0                       2                             1.00              3.00
+Maharashtra - Thane                     0                       22                            31.00             53.00
+Orissa - Baleshwar                      0                       2                             2.00              4.00
+Orissa - Bhadrak                        1                       9                             13.00             23.00
+Orissa - Jagatsinghpur                  0                       2                             5.00              7.00
+Orissa - Kendrapara                     81                      83                            23.00             187.00
+Orissa - Puri                           0                       1                             0.00              1.00
+Tamil Nadu - Cuddalore                  0                       0                             7.00              7.00
+Tamil Nadu - Nagapattinam               0                       9                             10.00             19.00
+Tamil Nadu - Ramanathapuram             0                       2                             1.00              3.00
+Tamil Nadu - Thanjavur                  0                       5                             3.00              8.00
+Tamil Nadu - Tooth ukudi                0                       0                             2.00              2.00
+West Bengal - Medinipur                 4                       2                             5.00              11.00
+West Bengal - North 24 Pargana          20                      6                             0.00              26.00
+West Bengal - South 24 Pargana          1014                    873                           231.00            2118.00
+Andaman and Nicobar Islands - Andaman   283                     259                           72.00             614.00
+Andaman and Nicobar Islands - Nicobar   0                       2                             1.00              3.00
+Daman and Diu - Diu                     0                       0                             1.44              1.56
+Puducherry - Yanam                      0                       0                             1.00              1.00
